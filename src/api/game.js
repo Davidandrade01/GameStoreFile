@@ -80,4 +80,20 @@ export class Gameclass{
       console.error(error)
     }
   }
+
+  async getGameBySlug(slug){
+
+    try {
+      const filtered = `[filters][slug][$eq]=${slug}`
+      const populate="populate[0]=wallpaper&populate[1]=cover&populate&populate[2]=screenshots&populate[3]=platform"
+      const url= `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${filtered}&${populate}`
+      const response= await fetch(url)
+      const result=await response.json()
+
+      if(response.status!==200) throw error;
+      return result.data[0]
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }

@@ -20,7 +20,7 @@ export default function GridGames({ game }) {
   return (
     <div className={styles.container}>
       {game.map((item) => (
-       <Link key={item.id} href={item.attributes.slug} className={styles.card_game}  > 
+       <Link key={item.id}  href={`/${item.attributes.slug}`} className={styles.card_game}  > 
         
         <div>
         <Image src={`${enlaceurlServer}${item.attributes.cover

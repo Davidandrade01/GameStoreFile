@@ -24,6 +24,7 @@ export default function Menu({isOpenSearch,data}) {
     const [platforms, setPlatforms] = useState(null);
     const [showSearch,setShowSearch]=useState(isOpenSearch)
     const [busca, setBusca]=useState("")
+    const enlaceurlServer=`${ENV.SERVER_HOST}`
     
     
     const router=useRouter()
@@ -62,7 +63,7 @@ export default function Menu({isOpenSearch,data}) {
     {map(platforms, (item) => (
       <Link key={item.id} href={`/games/${item.attributes.slug}`}>
         <li> 
-        {/* <Image src={item.attributes.icon.data.attributes.url} />  */}
+         <img src={`${enlaceurlServer}${item.attributes.icon.data.attributes.url}`} />  
         {item.attributes.title}
         </li>
       </Link>
