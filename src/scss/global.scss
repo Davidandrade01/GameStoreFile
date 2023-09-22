@@ -1,0 +1,28 @@
+@import'variables';
+@import 'mixins';
+
+*{
+    color: $text-primary;
+}
+
+body{
+    margin: 0;
+    background-color: $background-primary;
+}
+
+h1,h2,h3,h4,h4{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+color: $text-primary;
+
+  &:hover{
+ color: $primary;
+}
+
+}

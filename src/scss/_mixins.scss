@@ -1,0 +1,239 @@
+@import'variables';
+
+.ui.button.primary{
+    background-color: $primary;
+    color: $text-primary;
+    margin: 0;
+    padding: 15.5px 30px;
+    border-radius: 6px;
+
+    &:hover,
+    &:active,
+    &:focus{
+        background-color: $primary-hover;
+    }
+}
+
+
+//Modal style
+
+.ui.modal.confirm.visible.active {
+    background-color: $background-primary;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    > .content {
+      background-color: $background-primary;
+      color: $text-primary;
+      font-size: 18px;
+      padding: 20px 20px 0 20px !important;
+    }
+  
+    > .actions {
+      background-color: $background-primary;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      > .ui.button {
+        width: 48%;
+        padding: 15px !important;
+        margin: 0;
+      }
+    }
+  }
+
+
+  //Confirm 
+
+  .ui.modal.confirm.visible.active {
+    background-color: $background-primary;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    > .content {
+      background-color: $background-primary;
+      color: $text-primary;
+      font-size: 18px;
+      padding: 20px 20px 0 20px !important;
+    }
+  
+    > .actions {
+      background-color: $background-primary;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      > .ui.button {
+        width: 48%;
+        padding: 15px !important;
+        margin: 0;
+      }
+    }
+  }
+
+
+  //  style dropdown
+
+  .ui.selection.dropdown.number {
+    background-color: $background-tertiary;
+    border-radius: 5px !important;
+  
+    &.visible.active {
+      border-color: $primary;
+    }
+  
+    .divider.text {
+      color: $text-primary;
+    }
+  
+    .visible.menu.transition {
+      background-color: $background-secondary;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 0;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+  
+      .item {
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        &:hover,
+        &.activ {
+          background-color: $primary;
+        }
+  
+        .text {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+
+  //forms styles
+
+
+  .ui.form {
+    label {
+      position: relative;
+      bottom: 8px;
+      
+    }
+  
+    .field {
+      .ui.input {
+        input {
+          border: 2px solid $border-primary;
+          background-color: $background-secondary;
+          color: $text-primary;
+          padding: 14px;
+          border-radius: 6px;
+  
+          &:hover,
+          &:active,
+          &:focus {
+            border-color: $primary;
+          }
+        }
+      }
+    }
+  
+    .field.error {
+      .ui.input {
+        input {
+          border-color: $danger;
+        }
+      }
+    }
+  
+    .ui.button[type="submit"] {
+      background-color: $primary;
+      color: $text-primary;
+      margin: 0;
+      padding: 15.5px 30px;
+      border-radius: 6px;
+      margin-top: 32px;
+    }
+  }
+
+  //modal style
+
+  .ui.modal.visible.active {
+    background-color: $background-primary;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    > .header {
+      background-color: $background-primary;
+      color: $text-primary;
+      font-size: 20px;
+      padding: 30px 30px 0 30px;
+    }
+  
+    > .content {
+      background-color: $background-primary;
+      padding: 30px;
+    }
+  }
+
+
+  //pagination Style
+
+  .ui.pagination {
+    border-color: $border-primary;
+    background-color: $background-quaternary;
+  
+    > .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-primary;
+  
+      &.active,
+      &:focus,
+      &:hover {
+        background-color: $background-tertiary !important;
+        color: $text-primary !important;
+      }
+    }
+  }
+
+  //tab style
+
+  .ui.menu.secondary.pointing {
+    border-bottom: 2px solid $border-primary;
+  
+    a.item {
+      color: $text-primary;
+      font-weight: bold !important;
+  
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary !important;
+        border-color: $primary !important;
+      }
+  
+      &.active {
+        color: $primary;
+        border-color: $primary;
+      }
+  
+      > i {
+        color: $primary;
+      }
+    }
+  }
+  
+  .ui.tab.segment.active {
+    background-color: transparent;
+    padding: 20px 0 0 0;
+  }

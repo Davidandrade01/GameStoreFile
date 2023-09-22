@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+
+.container{
+display: flex;
+
+    button{
+        background-color: transparent !important;
+        margin-left: 10px !important;
+
+        &:hover{
+            >i{
+                color:$primary
+            }
+        }
+        >i {
+            font-size: 18px;
+            height: 20px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .cart_box{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >div{
+            background-color: $primary;
+            color: $text-primary;
+            font-size: 10px;
+            margin-left: 5px;
+
+        }
+    }
+
+    .avatar{
+        
+        border-radius: 10px ;
+        border:2px  $background-tertiary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    
+
+    }
+}
