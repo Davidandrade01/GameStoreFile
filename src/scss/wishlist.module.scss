@@ -1,0 +1,9 @@
+@import 'mixins';
+@import 'variables';
+
+.heart{
+color: $primary;
+&:hover{
+    opacity:0.6
+}
+}
