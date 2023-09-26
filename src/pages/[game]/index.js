@@ -4,6 +4,7 @@ import React from 'react'
 import HeaderWallpaper from '@/components/HeaderWallpaper'
 import { Separator } from '@/components/separator'
 import BasicLayout from '@/layouts/BasicLayout'
+import GameDetails from '@/components/GameDetails'
 // class
 import { Gameclass } from '@/api/game'
 
@@ -47,10 +48,12 @@ export default function detailGames({game}) {
         game={game.attributes}
          />
 
-
-
       <Separator height={50}/>
       
+      <GameDetails game={game.attributes}/>
+
+      
+
     </BasicLayout>
     </>
   )
