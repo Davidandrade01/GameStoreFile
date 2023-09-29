@@ -1,26 +1,27 @@
-import { ENV,authFetch } from "@/utils";
+import { ENV } from "@/utils";
 
-export class wishlist{
-    async list (userId,gameId){
-    try {
-        
+import { authFetch } from "@/utils/authFetch";
+
+
+export  class Wishlistclass{
+   
+    async  list (gameId,userId){
+    
+        try {
+           
         const filteredUser=`[filters][user][id][$eq][0]=${userId}`
-        const filteredGame=`[filters][game][id][$eq][1]=${gameId}`
-        const urlParams=`${filteredUser}&${filteredGame}`
+        const filteredgame=`[filters][game][id][$eq][1]=${gameId}`
+        const urlParams= `${filteredUser}&${filteredgame}`
         const url=`${ENV.API_URL}/${ENV.ENDPOINTS.WISHLIST}?${urlParams}`
+            const response= await authFetch(url)
+            const result= await response.json()
 
-        const response= await authFetch(url)
-        const result= await response.jason()
-        if(response.status!==200) throw error;
-
-        if(result.data.length===0){
-            return false
+            if(result.status!==200) throw error;
+            return result
+           
+        } catch (error) {
+            console.Console(error)
+            
         }
-       
-        return result.data[0]
-    } catch (error) {
-        console.error(error)
-        
     }
-}
 }

@@ -8,7 +8,8 @@ import { ENV } from '@/utils';
 import LabelDiscount from './LabelDiscount';
 import functiondiscount from '@/utils/fuctiondiscount';
 
-//styles
+
+//styles  
 import styles from '@/scss/gridgames.module.scss'
 
 export default function GridGames({ game }) {
@@ -25,7 +26,8 @@ export default function GridGames({ game }) {
         <div>
         <Image src={`${enlaceurlServer}${item.attributes.cover
         .data[0].attributes.url}`} width={300} height={200} alt={item.attributes.title}/>
-
+        
+        
         <div className={styles.discount}>
           {
             item.attributes.discount > 0 &&
@@ -42,6 +44,7 @@ export default function GridGames({ game }) {
           <span>
             €  {functiondiscount(item.attributes.price, item.attributes.discount).toFixed(2)}
           </span>
+         
         </div>
 
         

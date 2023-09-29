@@ -7,8 +7,8 @@ import { Image, Button, Icon, Container } from 'semantic-ui-react'
 //Utils
 import functiondiscount from '@/utils/fuctiondiscount'
 //components
+import { Favorites } from './Favorites'
 
-import Wishlist from './Wishlist'
 
 
 export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconImg}) {
@@ -22,6 +22,7 @@ export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconI
         </div>
 
         <Container className={styles.panel}>
+        
         <div className={styles.imgContainer}>
             <Image src={coverImg} />
         </div>
@@ -29,17 +30,25 @@ export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconI
         <div className={styles.actionsContainer}>
             
                 <h2 style={{marginBottom:'32px'}}>{game.title}</h2>
-            
+                
 
             <div className={styles.moreInfo}>
+
+            <Favorites gameId={gameId} className={styles.heart} />
                 <span>
                 <Image src={iconImg} />
                 {game.platform.data.attributes.title}
+                
                 </span>
+                
                 <span>
 
                     In Stock
-                    <Icon name="check"/>
+                    <div>
+                        <Icon name="check"/>
+                        
+                       
+                    </div>
                 </span>
 
                 <div className={styles.price}>
@@ -57,10 +66,10 @@ export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconI
                     ) }
                 <span className={styles.price}>{buyPrice}€</span>
             </div>
-
+          
             <Button primary fluid>Buy it</Button>
 
-            <Wishlist gameId={gameId} className={styles.heart}/>
+            
 
             </div>
         
