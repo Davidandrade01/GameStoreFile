@@ -11,6 +11,7 @@ import { Container } from 'semantic-ui-react'
 import { Separator } from './separator'
 
 
+
 export default function GameDetails({game}) {
     //console.log(game)
   return (
@@ -35,11 +36,13 @@ export default function GameDetails({game}) {
     
     <div className={styles.media}>
 
-        TESTSE
+        <h2> GamePlay</h2>              
     </div>
 
-    <Separator height={30}/>
+    <Separator height={32}/>
     <ReactPlayer url={game.video} className={styles.video} width="100%" height='500px'/>
+    <Separator height={32}/>
+
     </Container>
    </>
   )

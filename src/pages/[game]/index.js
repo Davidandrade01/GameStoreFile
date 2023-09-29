@@ -5,17 +5,20 @@ import HeaderWallpaper from '@/components/HeaderWallpaper'
 import { Separator } from '@/components/separator'
 import BasicLayout from '@/layouts/BasicLayout'
 import GameDetails from '@/components/GameDetails'
+
 // class
 import { Gameclass } from '@/api/game'
 
 //Utils
 import { ENV } from '@/utils'
+import GalleryScrShots from '@/components/GalleryScrShots'
 
 
 
 export async function getServerSideProps(context){
 
   const gameCtrl= new Gameclass()
+  
 
   console.log(context)
   const{query:{game}}=context
@@ -32,6 +35,7 @@ export async function getServerSideProps(context){
 //Aqui o game que passo como props equivale a o return do getServerSideProps
 export default function detailGames({game}) {
  
+
   const enlaceurlServer=`${ENV.SERVER_HOST}`
   console.log(game)
   return (
@@ -48,11 +52,11 @@ export default function detailGames({game}) {
         game={game.attributes}
          />
 
-      <Separator height={50}/>
+      <Separator height={100}/>
       
       <GameDetails game={game.attributes}/>
 
-      
+      <GalleryScrShots game={game.attributes} />
 
     </BasicLayout>
     </>

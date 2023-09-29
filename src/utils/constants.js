@@ -11,7 +11,8 @@ export const ENV={
         USERS: "users",
         PLATFORM: "platforms",
         ADDRESS:"addresses",
-        GAME:"games"
+        GAME:"games",
+        WISHLIST:"wishlists"
     },
     TOKEN:"token",   // O token.js consome este env ,
 
