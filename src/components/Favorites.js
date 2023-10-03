@@ -1,42 +1,50 @@
-import React from 'react'
-import { Icon } from 'semantic-ui-react'
-import classNames from "classnames";
-import { useAuth } from '@/hooks/useAuth';
-import { Wishlistclass } from '@/api/wishlistapi';
-import { useState,useEffect } from 'react';
 
+import { useEffect,useState } from 'react';
+//ui Semantic
+import { Icon } from 'semantic-ui-react';
+
+import classNames from "classnames";
+//Styles
 import styles from '@/scss/favorite.module.scss'
 
+// Class
+import { wishClass } from '@/api/wishlistapi';
 
-const wishlistCtrl = new Wishlistclass();
+//Hooks
+import { useAuth } from '@/hooks/useAuth';
 
-export function Favorites(props) {
-  const { gameId, className, } = props;
-  const [hasWishlist, setHasWishlist] = useState(null);
-  const { user } = useAuth();
+const whishCtrl=  new wishClass()
 
-  useEffect(() => {
-    (async () => {
+
+export function Favorites(gameId,className) {
+  const {user}=useAuth()
+  const [hasFavorites, setHasfavorites]=useState(null)
+  useEffect(()=>{
+    (async ()=>{
+     
       try {
-        const response = await wishlistCtrl.list(user.id, gameId);
-        console.log(response)
-        setHasWishlist(response);
+        const response= await whishCtrl.list(user.id,gameId)
+        setHasfavorites(response)
       } catch (error) {
-        setHasWishlist(false);
-        console.error(error);
+        console.error(error)
+        setHasfavorites(false)
       }
+      
     })();
-  }, [gameId]);
 
 
-  if (hasWishlist === null) return null;
+  },[gameId])
+  
+  
+  if(hasFavorites===null) return null;
 
   return (
     <Icon
-      name='heart'
-      className={classNames(styles.wishlistIcon , {
-        [className]: className,
-      })}
-    />
-  );
+    name={ hasFavorites? "heart" : "heart outline"}
+    
+    className={classNames(styles.wishlistIcon, {
+      [className]: className,
+    })}
+  />
+  )
 }

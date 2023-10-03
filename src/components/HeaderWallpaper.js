@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import styles from '@/scss/headerwallpaper.module.scss'
 
 //ui semantic
@@ -8,13 +8,26 @@ import { Image, Button, Icon, Container } from 'semantic-ui-react'
 import functiondiscount from '@/utils/fuctiondiscount'
 //components
 import { Favorites } from './Favorites'
-
+import { useCart } from '@/hooks/useCart'
 
 
 export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconImg}) {
    //console.log(gameId)
    //console.log(game)
    const buyPrice = functiondiscount(game.price, game.discount);
+   
+   const[loading,SetLoading]=useState(false)
+    const {addToCart}=useCart()
+
+
+    const handleClick=()=>{
+        addToCart(gameId)
+        SetLoading(true)
+        setTimeout(()=>{
+            SetLoading(false)
+        },500)
+    }
+
   return (
   <> 
         <div className={styles.container}>
@@ -67,7 +80,7 @@ export default function headerWallpaper({wallpaperImg,gameId,game,coverImg,iconI
                 <span className={styles.price}>{buyPrice}€</span>
             </div>
           
-            <Button primary fluid>Buy it</Button>
+            <Button primary fluid  loading={loading} onClick={handleClick}  >Buy it</Button>
 
             
 

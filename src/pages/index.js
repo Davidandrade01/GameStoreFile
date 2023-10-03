@@ -1,4 +1,5 @@
 import BasicLayout from "@/layouts/BasicLayout"
+import { useState } from "react"
 //components
 import BannerLastGame from "@/components/BannerLastGame"
 import LatestGames from "@/components/LatestGames"
@@ -8,7 +9,6 @@ import { Container } from "semantic-ui-react"
 
 export default function Index() {
  
-  
 
   return (
     <>

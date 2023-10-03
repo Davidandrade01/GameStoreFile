@@ -35,8 +35,8 @@ export default function GalleryScrShots({game}) {
      {ArrScreenshots.map((item) => (
       
     
-          <div className={styles.cards}>
-          <img className={styles.img}  key={item.id} src={`${enlaceurlServer}${item.attributes.url}`}  alt={item.attributes.title}/> 
+          <div className={styles.cards} key={item.id}>
+          <img className={styles.img}   src={`${enlaceurlServer}${item.attributes.url}`}  alt={item.attributes.title}/> 
           </div> 
 
           )
