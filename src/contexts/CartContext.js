@@ -1,32 +1,37 @@
-import { useEffect, useState, createContext, Children } from "react";
+import { createContext,  } from "react";
+import { useState,useEffect } from "react";
+import { cartClass } from "@/api/Cartapi";
 
 export const CartContext=createContext()
-import { Cartapi } from "@/api/Cartapi";
-
+const cartCtrl= new cartClass()
 export function CartProvider({children}){
-  const [cart,setCart]=useState([])
-  const [total,setTotal]=useState(0)
-  const cartCtrl= new Cartapi()
-
-  const addToCart=(gameId)=>{
-
-      cartCtrl.AddOrder(gameId)
-  }
+  
+  const [cart,setcart]=useState(null)
+  const [total, setTotal] = useState(cartCtrl.totalcart());
+  
+  console.log(total)
 
   useEffect(()=>{
-    const response=cartCtrl.getOrder()
-    setCart(response)
+   const response= cartCtrl.getCart()
+   console.log(response)
   },[])
-  
+
+ const addTocart=(gameId)=>{
+  cartCtrl.add(gameId)
+
+ }
 
   const data={
-    cart:cart,
-    total:total,
-    addToCart,
-    deleItem:()=>{},
-    deleteAllItem:()=>{},
-    ChangeQty:()=>{},
+    cart,
+    total,
+    addTocart,
+    deleteItem:()=>{},
+    deleteAllCart:()=>{},
+    UpdateCart:()=>{}
   }
 
-    return <CartContext.Provider value={data}>{children}</CartContext.Provider>
+  return <CartContext.Provider value={data}>{children}</CartContext.Provider>
+ 
+
+
 }

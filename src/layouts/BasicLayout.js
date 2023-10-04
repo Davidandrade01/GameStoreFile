@@ -3,6 +3,7 @@ import React from 'react'
 import { Container } from 'semantic-ui-react'
 import classNames from 'classnames'
 
+
 //styles
 import styles from '@/scss/basiclayout.module.scss'
 

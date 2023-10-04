@@ -1,41 +1,59 @@
 import { ENV } from "@/utils";
-import { authFetch } from "@/utils/authFetch";
 
-export class Cartapi{
 
-    AddOrder(gameId){
+export class cartClass{
+     add(gameId){
+
+        const cartArr= this.getCart()
        
-      const cartArr= this.getOrder()
-      const indexItem=cartArr.findIndex((item)=>(item.id===gameId))
+       const data={
+        id:gameId,
+        qty:1
+       }
 
-      if(indexItem<0){
-        cartArr.push({
-          id:gameId,
-          qty:1
-        })
-      }
+       const itemIndex=cartArr.findIndex((item)=>item.id===gameId)
 
-      else{
-        const more=cartArr[indexItem]
-        cartArr[indexItem].qty=more.qty+1
-      }
-      
+       if(itemIndex<0){
+        cartArr.push(data)
+       }
+        else{
+            const product=cartArr[itemIndex]
+            product.qty++
+            //console.log(product.qty)
+        }
         
         
-       localStorage.setItem(ENV.CART,JSON.stringify(cartArr))
+      localStorage.setItem(ENV.CART,JSON.stringify(cartArr))
+        
+        
+
+
         
     }
 
-    getOrder(){
-      const response=  localStorage.getItem(ENV.CART)
-      if (!response){
-       return []
-      }
-      else{
-        return JSON.parse(response)
-      }
+    getCart(){
 
-        return response
+        
+
+        const response=localStorage.getItem(ENV.CART)
+
+       
+        if(!response){
+            return []
+        }
+        else{
+            return JSON.parse(response)
+        }
+        
     }
 
+    totalcart() {
+     const response= this.getCart()
+        let count=0
+     response.forEach((item)=>{
+        
+        count+=item.qty
+     })
+        return count
+    }
 }
