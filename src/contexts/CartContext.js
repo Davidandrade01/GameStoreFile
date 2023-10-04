@@ -6,20 +6,27 @@ export const CartContext=createContext()
 const cartCtrl= new cartClass()
 export function CartProvider({children}){
   
-  const [cart,setcart]=useState(null)
+  const [cart,setCart]=useState(null)
   const [total, setTotal] = useState(cartCtrl.totalcart());
   
   console.log(total)
 
   useEffect(()=>{
    const response= cartCtrl.getCart()
-   console.log(response)
+   //console.log(response)
+   setCart(response)
   },[])
 
  const addTocart=(gameId)=>{
   cartCtrl.add(gameId)
+  refreshTotalCart();
 
  }
+
+ const refreshTotalCart = () => {
+  setTotal(cartCtrl.totalcart());  //Istpo atualiza just inTime a qty de produtos
+  setCart(cartCtrl.getCart());
+};
 
   const data={
     cart,
