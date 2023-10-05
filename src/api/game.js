@@ -96,4 +96,19 @@ export class Gameclass{
       console.error(error)
     }
   }
+
+  async getGameById(id){
+    try {
+      const populate= `populate[0]=cover&populate[1]=platform`
+      const url= `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/${id}?${populate}`
+      const response= await fetch(url)
+      const result= await response.json()
+
+      if(response.status!=200) throw error
+      return result
+
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
