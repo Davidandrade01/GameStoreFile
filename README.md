@@ -53,8 +53,8 @@ Biblioteca | Framework | Recursos
 
 
 * Html
-*Formik
-*yup
+    **Formik**
+    **yup**
 
 * Css
   * **Sass**
