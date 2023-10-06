@@ -161,7 +161,7 @@ Vercel          |
 *  "lodash": "^4.17.21",
 *  "next": "13.4.19",
 *  "react-player": "^2.13.0"
-* "react-responsive-carousel":
+* "react-responsive-carousel",
 * "semantic-ui-react"
 *"swiper": "^10.3.1",
 * "yup": "^1.2.0"
