@@ -123,9 +123,7 @@ onSubmit:async(formValue)=>{
 
 >Quantidade do produto
 
-<p align="center" width="100%">
-    <img width="50%" src="./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif"> 
-</p>
+
 
 
 - [x] Checkout(preenchimento de endereço)
