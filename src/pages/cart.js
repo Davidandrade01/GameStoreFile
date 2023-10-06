@@ -2,6 +2,10 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { useState,useEffect } from 'react'
+//Components
+import CartDetails from '@/components/CartDetails'
+
+//Hooks
 import { useCart } from '@/hooks/useCart'
 //Layouts
 import CartLayout from '@/layouts/CartLayout'
@@ -26,20 +30,20 @@ export default function cart() {
         //  console.log(response)
          arr.push({...response.data ,qty:item.qty})
         }
-        console.log(arr)
+     
         setGames(arr);
       } catch (error) {
         console.error(error);
       }
     })();
   }, [cart]);
-
+  console.log (games)
   return (
     <>
       
 
       <CartLayout>
-        {currentStep === 1 && <p>Step One</p> }
+        {currentStep === 1 && <CartDetails games={games} /> }
         {currentStep === 2 && <p>Step two</p> }
         {currentStep === 3 && <p>Step three</p>}
       </CartLayout>
