@@ -24,7 +24,7 @@
 
 # Nota
 <p>
-    O **Game Store** é um **e-commerce** em desenvolvimento, com códigos robustos que são totalmente adequados ao mercado como um produto comercial. Nesta plataforma, os usuários têm a capacidade de comprar jogos listados em sua plataforma de jogos ou facilmente encontrá-los usando a barra de pesquisa.</P>
+    O **Game Store** é um **e-commerce** em desenvolvimento, com códigos robustos que são totalmente adequados ao mercado como um produto comercial. Nesta plataforma, os usuários têm a capacidade de comprar jogos listados em sua plataforma de consoles ou facilmente encontrá-los usando a barra de pesquisa.</P>
     
 <p>Durante toda a experiência de navegação, os usuários podem acessar seu perfil e os dados de compras, que são armazenados localmente. Esses dados são encapsulados por meio de **Auth Context** e posteriormente reconhecidos e armazenados em um banco de dados (Strapi). Na plataforma **Strapi**, foram construídas coleções de dados tanto para produtos quanto para regras autenticadas e públicas relacionadas à configuração de perfis de conteúdo individual.</p>
 
