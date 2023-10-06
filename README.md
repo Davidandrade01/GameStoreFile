@@ -23,10 +23,16 @@
 
 
 # Nota
- O **Buyit** é um estudo de ecommerce que envolve suas principais etapas de login ao checkout. A ideia de criação do projeto com a intenção de compor meu portifólio de estudos dada a minha recente formação na área de front-end. 
+<p>
+    O **Game Store** é um **e-commerce** em desenvolvimento, com códigos robustos que são totalmente adequados ao mercado como um produto comercial. Nesta plataforma, os usuários têm a capacidade de comprar jogos listados em sua plataforma de jogos ou facilmente encontrá-los usando a barra de pesquisa.
+Durante toda a experiência de navegação, os usuários podem acessar seu perfil e os dados de compras, que são armazenados localmente. Esses dados são encapsulados por meio de **Auth Context** e posteriormente reconhecidos e armazenados em um banco de dados (Strapi). Na plataforma **Strapi**, foram construídas coleções de dados tanto para produtos quanto para regras autenticadas e públicas relacionadas à configuração de perfis de conteúdo individual.
+Para facilitar o gerenciamento da API criada na aplicação web, utilizou-se o **Insomnia**, que simplifica os testes de rotas e melhora o desempenho com as **APIs REST**  configuradas com métodos **GET, DELETE e POST** para comunicação entre cliente e servidor.
+O layout da aplicação é simples e intuitivo, priorizando a funcionalidade e eficácia, seguindo o princípio de tornar as coisas visíveis, conforme afirmado por **Donald Norman**. 
+A aplicação web proporciona uma experiência intuitiva aos usuários, incluindo registro/login, alterações de perfil, busca de itens (jogos), compra, gerenciamento do carrinho de compras (**CRUD**), seleção da direção de entrega do produto e integração com a API de pagamento. Tudo isso é projetado com base em boas práticas de **UX**, seguindo as convenções mencionadas por **Steve Krug** e mantendo hierarquias visuais claras.
+O código da aplicação está organizado em componentes e hooks, com criação de rotas de API renderizadas usando **React** e **Next Js** como framework, e os estilos são divididos e gerenciados com **Sass**. Além disso, a integração da API do **Paypal** permite uma variedade de opções de pagamento e o processamento de pedidos. 
 
-  Posso dizer com toda a certeza que foi o projeto em que estive mais mergulhado e que deu mais trabalho de manutenção em suas **PROPS** e manejo dos resultados das **Api´s** aplicadas. 
-  Para implementa-lo inicialmente foram aplicada algum conceitos de experiência do usuário que foram traduzidas em código integrando uma jornada mais clara. 
+</p>
+
 
 <p align="center" width="100%">
     <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
