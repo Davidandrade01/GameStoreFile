@@ -37,12 +37,12 @@
 <P> O código da aplicação está organizado em componentes e hooks, com criação de rotas de API renderizadas usando **React** e **Next Js** como framework, e os estilos são divididos e gerenciados com **Sass**. Além disso, a integração da API do **Paypal** permite uma variedade de opções de pagamento e o processamento de pedidos. </P>
 
 
-
+<br>
 
 
 https://github.com/Davidandrade01/GameStore/assets/66143693/7ed83ec5-0f15-4b1d-9b63-2fb1d4664e60
 
-
+<br>
 
 ## Stack
 
