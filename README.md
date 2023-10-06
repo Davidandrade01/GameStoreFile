@@ -53,13 +53,16 @@ Biblioteca | Framework | Recursos
 
 
 * Html
+*Formik
+*yup
 
 * Css
   * **Sass**
-  * **Tailwind**
+  * **ClassNames**
+
 
 * Base de Dados para autenticação
-  * **FireBase** 
+  * **Strapi** 
 
 * Integração com Api de pagamento
   * **Pay-pal**
@@ -75,10 +78,10 @@ Biblioteca | Framework | Recursos
 - [x] pop-up (modal) do carrinho
 - [x] Adição e remoção de itens
 - [ ] Histórico de compras(por desenvolver)
-- [x] Menu DropDown por categorias de produtos
 - [x] Carrossel com cards dos produtos
 - [x] Modal do carrossel com detalhes dos produtos(Preço, marca, detalhes)
-- [x] Newsletter funcional
+- [x] Pagamento de compras com Paypal
+
 
 ### Jornada do usuário 
 
@@ -86,14 +89,25 @@ Biblioteca | Framework | Recursos
 - [x] Feedback de erro, ou sucesso
 >  Catch
 ```js
-catch (error) {
-            console.log(error.message)
-            console.log(typeof error.message)
 
-            let systemErrorMessage
-            if(error.message.includes("password")){
-                systemErrorMessage=("Password needs at least 6 characters")
-            }}
+onSubmit:async(formValue)=>{
+      try {
+       const response=await authCtrl.login(formValue)
+      login(response.jwt)
+       console.log(response)
+       
+      } catch (error) {
+        console.error(error)
+        
+        let systemErrorMessage
+        if(error.message.includes("password")){
+            systemErrorMessage=("Password needs at least 6 characters")
+        }}
+      }
+    }
+    
+  })
+  
   ```
 - [x] Busca do item pelo card , ou na barra de pesquisa
 
@@ -113,19 +127,17 @@ catch (error) {
     <img width="50%" src="./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif"> 
 </p>
 
-- [x] Atualização e feedback visual(fade-in-out) do carrinho(bag)
+
 - [x] Checkout(preenchimento de endereço)
-- [x] Pagamento (Conexão com o **pay-pal**)
-- [ ] Conclusão do pedido( página por desenvolver)
+- [] Pagamento (Conexão com o **pay-pal**) ( página por desenvolver)
+- [ ] Conclusão do pedido com visualização dos itens comprados
 
 
 ## Api´s
 
 Api| url
 ---|---
-FakestoreApi | https://fakestoreapi.com/
-DummyJson | https://dummyjson.com/docs/products
-Duminio   |https://api.duminio.com/ptcp
+Desenvolvimento de api e suas Query com o **Insomnia + Strapi**
 
 ## Heurísticas de Nielsen aplicadas (UX)
 
@@ -139,22 +151,18 @@ Duminio   |https://api.duminio.com/ptcp
 links pessoais  | url
 -------------   |------------------
 Linkedin        |https://linkedin.com/in/davidandradefrontendreact
-Vercel          | https://buy-7f362jkxd-davidandrade01.vercel.app/
+Vercel          | 
 
 ## Dependências
 
-* @headlessui/react": "^1.7.9",
-* @paypal/react-paypal-js": "^7.8.2",
-* firebase: "^9.16.0"
-* "next": "^13.1.2",
-* "react": "18.2.0",
-* "react-dom": "18.2.0",
-* "react-firebase-hooks": "^5.1.1",
-* "react-hook-form": "^7.43.0",
-* "react-icons": "^4.7.1",
-* "react-multi-carousel": "^2.8.2",
-* "react-responsive-carousel": "^3.2.23",
-* "react-router-dom": "^6.8.0",
-* "react-spinners": "^0.13.8",
-* "react-transition-group": "^4.4.5",
-* "uuid": "^9.0.0"
+* classnames: "^2.3.2",
+* formik": "^2.4.3"
+* jwt-decode: "^3.1.2",
+*  "lodash": "^4.17.21",
+*  "next": "13.4.19",
+*  "react-player": "^2.13.0"
+* "react-responsive-carousel":
+* "semantic-ui-react"
+*"swiper": "^10.3.1",
+* "yup": "^1.2.0"
+ 
