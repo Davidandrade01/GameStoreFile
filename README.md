@@ -40,7 +40,7 @@
 
 
 <p align="center" width="100%">
-    <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
+    <video width="50%" src=" ./public/images/GameStorev1(Full).mp4"> 
 </p>
 
 ## Stack
