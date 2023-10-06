@@ -39,10 +39,10 @@
 
 
 
-<p align="center">
+
 https://github.com/Davidandrade01/GameStore/assets/66143693/7ed83ec5-0f15-4b1d-9b63-2fb1d4664e60
 
-</p>
+
 
 ## Stack
 
