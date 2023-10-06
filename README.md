@@ -42,7 +42,7 @@
 <p align="center">
   <video width="50%" controls>
     <source src="./public/images/GameStorev1(Full).mp4" type="video/mp4">
-    Seu navegador não suporta a reprodução de vídeos.
+    
   </video>
 </p>
 
