@@ -39,8 +39,11 @@
 
 
 
-<p align="center" width="100%">
-    <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
+<p align="center">
+  <video width="50%" controls>
+    <source src="./public/images/GameStorev1(Full).mp4" type="video/mp4">
+    Seu navegador não suporta a reprodução de vídeos.
+  </video>
 </p>
 
 ## Stack
