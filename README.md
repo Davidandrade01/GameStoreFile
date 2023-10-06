@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="33%" src="./public/image/logoBackGround.png"> 
+    <img width="100%" src="./public/image/logoBackGround.png"> 
 </p>
 
 #### Menu
