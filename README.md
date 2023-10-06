@@ -5,7 +5,7 @@
 #### Menu
 [Nota](#nota)  |
 
-[Nota](#Vídeo)  |
+[Vídeo](#Vídeo)  |
 
 [Stack](#stack)  |
 
