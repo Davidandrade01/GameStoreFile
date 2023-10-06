@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="33%" src="./public/images/logobuyit.png"> 
+    <img width="33%" src="./public/image/logo.png"> 
 </p>
 
 #### Menu
