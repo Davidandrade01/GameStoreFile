@@ -1,38 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center" width="100%">
+    <img width="33%" src="./public/images/logobuyit.png"> 
+</p>
 
-## Getting Started
+#### Menu
+[Nota](#nota)  |
 
-First, run the development server:
+[Stack](#stack)  |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+[Seções desenvolvidas](#seções-desenvolvidas) |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Interface](#interface) |
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[Jornada do usuário](#jornada-do-usuário) | 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[Api´s](#apis) |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[Heurísticas de Nielsen aplicadas (UX)](#heurísticas-de-nielsen-aplicadas-ux) |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[Links](#links) |
 
-## Learn More
+[Dependências](#dependencias) |
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Nota
+ O **Buyit** é um estudo de ecommerce que envolve suas principais etapas de login ao checkout. A ideia de criação do projeto com a intenção de compor meu portifólio de estudos dada a minha recente formação na área de front-end. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  Posso dizer com toda a certeza que foi o projeto em que estive mais mergulhado e que deu mais trabalho de manutenção em suas **PROPS** e manejo dos resultados das **Api´s** aplicadas. 
+  Para implementa-lo inicialmente foram aplicada algum conceitos de experiência do usuário que foram traduzidas em código integrando uma jornada mais clara. 
 
-## Deploy on Vercel
+<p align="center" width="100%">
+    <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
+</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* JavaScript 
+
+Biblioteca | Framework | Recursos
+-----------|---------- |---------
+**React**      |**Next.js**    |  Hooks, Context, Components, Props
+
+
+* Html
+
+* Css
+  * **Sass**
+  * **Tailwind**
+
+* Base de Dados para autenticação
+  * **FireBase** 
+
+* Integração com Api de pagamento
+  * **Pay-pal**
+
+
+## Seções desenvolvidas
+
+### Interface
+- [x] Barra de pesquisa com acesso à api
+- [x] Login/Logout
+- [ ] Favoritos (por desenvolver)
+- [x] Bag/carrinho
+- [x] pop-up (modal) do carrinho
+- [x] Adição e remoção de itens
+- [ ] Histórico de compras(por desenvolver)
+- [x] Menu DropDown por categorias de produtos
+- [x] Carrossel com cards dos produtos
+- [x] Modal do carrossel com detalhes dos produtos(Preço, marca, detalhes)
+- [x] Newsletter funcional
+
+### Jornada do usuário 
+
+- [x] Login ou registro
+- [x] Feedback de erro, ou sucesso
+>  Catch
+```js
+catch (error) {
+            console.log(error.message)
+            console.log(typeof error.message)
+
+            let systemErrorMessage
+            if(error.message.includes("password")){
+                systemErrorMessage=("Password needs at least 6 characters")
+            }}
+  ```
+- [x] Busca do item pelo card , ou na barra de pesquisa
+
+>Loading Componente ( Uso de Spinner para indicar busca ao usuário)
+
+```js
+{loading &&
+      <Loading/>
+      }
+```      
+
+- [x] Adição de itens no carrinho/remoção
+
+>Quantidade do produto
+
+<p align="center" width="100%">
+    <img width="50%" src="./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif"> 
+</p>
+
+- [x] Atualização e feedback visual(fade-in-out) do carrinho(bag)
+- [x] Checkout(preenchimento de endereço)
+- [x] Pagamento (Conexão com o **pay-pal**)
+- [ ] Conclusão do pedido( página por desenvolver)
+
+
+## Api´s
+
+Api| url
+---|---
+FakestoreApi | https://fakestoreapi.com/
+DummyJson | https://dummyjson.com/docs/products
+Duminio   |https://api.duminio.com/ptcp
+
+## Heurísticas de Nielsen aplicadas (UX)
+
+* Estética Minimalista
+* Correspondência entre o sistema e o mundo real
+* Visibilidade do Status do Sistema
+* Consistência e padronização.
+
+## Links
+
+links pessoais  | url
+-------------   |------------------
+Linkedin        |https://linkedin.com/in/davidandradefrontendreact
+Vercel          | https://buy-7f362jkxd-davidandrade01.vercel.app/
+
+## Dependências
+
+* @headlessui/react": "^1.7.9",
+* @paypal/react-paypal-js": "^7.8.2",
+* firebase: "^9.16.0"
+* "next": "^13.1.2",
+* "react": "18.2.0",
+* "react-dom": "18.2.0",
+* "react-firebase-hooks": "^5.1.1",
+* "react-hook-form": "^7.43.0",
+* "react-icons": "^4.7.1",
+* "react-multi-carousel": "^2.8.2",
+* "react-responsive-carousel": "^3.2.23",
+* "react-router-dom": "^6.8.0",
+* "react-spinners": "^0.13.8",
+* "react-transition-group": "^4.4.5",
+* "uuid": "^9.0.0"
