@@ -23,8 +23,14 @@ export function CartProvider({children}){
 
  }
 
+ const updateQty=(gameId,qty)=>{
+ 
+  cartCtrl.updateCart(gameId,qty)
+  refreshTotalCart()
+ }
+
  const refreshTotalCart = () => {
-  setTotal(cartCtrl.totalcart());  //Istpo atualiza just inTime a qty de produtos
+  setTotal(cartCtrl.totalcart());  //Isto atualiza just inTime a qty de produtos
   setCart(cartCtrl.getCart());
 };
 
@@ -34,7 +40,7 @@ export function CartProvider({children}){
     addTocart,
     deleteItem:()=>{},
     deleteAllCart:()=>{},
-    UpdateCart:()=>{}
+    updateQty,
   }
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>

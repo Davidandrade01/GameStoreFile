@@ -10,9 +10,22 @@ import { ENV } from '@/utils';
 import { useCart } from '@/hooks/useCart'
 //Styles
 import styles from '@/scss/cartdetails.module.scss'
+import { array } from 'yup';
+import Index from '@/pages';
 
 export default function CartDetails({games}) {
     const enlaceurlServer=`${ENV.SERVER_HOST}`;//Ligação com o host(Sem isso a leitura da URL não estava sendo executada)
+
+    const options=[]
+     for(let i=1;i<=100;i++){
+      options.push({
+        key:String(i),
+        text:String(i),
+        value:i,
+      })
+     }
+    
+     const {updateQty}=useCart()
     
   return (
     <div className={styles.container}>
@@ -35,8 +48,13 @@ export default function CartDetails({games}) {
 
               <div className={styles.quantity}>
 
-                <Dropdown className='number' options={[]} selection value={null}
-                compact/>
+                <Dropdown className='number' 
+                options={options} selection
+                 value={game.qty}
+                compact
+                  onChange={(_,data)=>{updateQty(game.id,data.value)}}//*nota
+                />
+
                 <span>€</span>
                 <span>
                     {functiondiscount(game.attributes.price,game.attributes.discount).toFixed(2)}
@@ -50,3 +68,8 @@ export default function CartDetails({games}) {
   );
 }
 
+// *nota: O (_,data) inicialmente ignora a quantidade que já está no 
+// seletor de options(game.qty) e passa a nova quantidade escolhida
+//Se passasse diretamente (game.qty) o seletor não iria fazer efeito,
+//pois sempre iria mostrar a quantidade atual inputada pelo usuário 
+// antes, no momento do click no botão Buy it.
