@@ -2,6 +2,11 @@
 @import 'mixins';
 
 .container {
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
     > h2 {
       margin-bottom: 15px;
       font-size: 18px;
@@ -10,7 +15,7 @@
   
   .block {
     background-color: $background-quaternary;
-    width: 100%;
+    width: 50%;
     border-radius: 15px;
     padding: 20px;
     display: flex;

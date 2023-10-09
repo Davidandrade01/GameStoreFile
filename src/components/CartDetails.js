@@ -7,29 +7,46 @@ import { map } from "lodash";
 import functiondiscount from '@/utils/fuctiondiscount'
 import { ENV } from '@/utils';
 //Hooks
-import { useCart } from '@/hooks/useCart'
+
+import { useCart } from '@/hooks/useCart';
+
 //Styles
 import styles from '@/scss/cartdetails.module.scss'
-import { array } from 'yup';
-import Index from '@/pages';
+// components
+
+import Resumen from './Resumen';
+
+
 
 export default function CartDetails({games}) {
     const enlaceurlServer=`${ENV.SERVER_HOST}`;//Ligação com o host(Sem isso a leitura da URL não estava sendo executada)
 
+    const {updateQty,deleteItemFromCart}=useCart()
+
     const options=[]
      for(let i=1;i<=100;i++){
       options.push({
-        key:String(i),
+        key:i,
         text:String(i),
         value:i,
       })
      }
     
-     const {updateQty}=useCart()
+
+      const handleChange=(gameId, qty)=>{
+        updateQty(gameId,qty)
+      }
+
+      const handleDelete=(gameId)=>{
+        deleteItemFromCart(gameId)
+      }
+      
     
   return (
+    <>
+    <h2 style={{marginBottom:8}}>Basket</h2>
     <div className={styles.container}>
-      <h2>Basket</h2>
+      
 
       <div className={styles.block}>
         {map(games, (game) => (
@@ -40,7 +57,8 @@ export default function CartDetails({games}) {
                 <div>
                   <p>{game.attributes.title}</p>
                   <p>{game.attributes.platform.data.attributes.title}</p>
-                  <Icon name='trash alternate outline' link/>
+                  <Icon name='trash alternate outline' link 
+                   onClick={()=>handleDelete(game.id)}/>
                 </div>
 
                
@@ -52,7 +70,9 @@ export default function CartDetails({games}) {
                 options={options} selection
                  value={game.qty}
                 compact
-                  onChange={(_,data)=>{updateQty(game.id,data.value)}}//*nota
+                onChange={(_,data)=>handleChange(game.id,data.value)}
+    
+                 //*nota
                 />
 
                 <span>€</span>
@@ -64,8 +84,12 @@ export default function CartDetails({games}) {
           </div>
         ))}
       </div>
+
+      <Resumen games={games}/>
     </div>
+    </>
   );
+
 }
 
 // *nota: O (_,data) inicialmente ignora a quantidade que já está no 

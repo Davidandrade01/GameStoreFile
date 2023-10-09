@@ -53,10 +53,18 @@ export class cartClass{
         return count
     }
 
-    updateCart(gameId,qty){
-       const response=this.getCart() 
-       const objIndex=response.findIndex((item)=>item.id === gameId)
-       response[objIndex].qty=qty
-       localStorage.setItem(ENV.CART,JSON.stringify(response))
+   updateCart(gameId,qty){
+    const response= this.getCart()
+    const itemIndex=response.findIndex((item)=>item.id===gameId)
+    response[itemIndex].qty=qty
+    localStorage.setItem( ENV.CART, JSON.stringify(response))
+   }
+
+   delItem(gameId){
+    const response= this.getCart()
+    const filtered=response.filter((item)=>item.id !== gameId)
+    
+    localStorage.setItem(ENV.CART,JSON.stringify(filtered))
+
     }
 }
