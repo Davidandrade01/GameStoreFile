@@ -12,6 +12,7 @@ import CartLayout from '@/layouts/CartLayout'
 
 //api
 import { Gameclass } from '@/api/game'
+import Shippment from '@/components/Shippment'
 
 const GameCtrl= new Gameclass()
 
@@ -44,7 +45,7 @@ export default function cart() {
 
       <CartLayout>
         {currentStep === 1 && <CartDetails games={games} /> }
-        {currentStep === 2 && <p>Step two</p> }
+        {currentStep === 2 && <Shippment games={games}/> }
         {currentStep === 3 && <p>Step three</p>}
       </CartLayout>
     </>
