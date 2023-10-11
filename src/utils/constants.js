@@ -17,7 +17,8 @@ export const ENV={
       
     },
     TOKEN:"token",   // O token.js consome este env ,
-    CART:"cart"
+    CART:"cart",
+    STRIPE_TOKEN:"pk_test_51NhdDYAWxaWuqGfJxMR4fzlksMrx2A2JmRUE1AjOXb9FAyVvREOK02MkHGgVgZmk6rEgt09jNJQ93gRWsqH3wmku00MjTM8Vg2"
 
     
 }
