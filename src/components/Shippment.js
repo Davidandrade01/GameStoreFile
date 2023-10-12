@@ -1,12 +1,20 @@
 import React from 'react'
+import { useState } from 'react'
+//Styles
 import styles from '@/scss/shippment.module.scss'
+
+//Components
+import OrderSummary from './OrderSummary'
 import { Separator } from './separator'
 import ShippmentAddress from './ShippmentAddress'
-import { useState } from 'react'
 import Payment from './Payment'
+//Stripe
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+
+//Contants
 import { ENV } from '@/utils'
+
 
 
 const stripeInit=loadStripe(ENV.STRIPE_TOKEN)
@@ -30,7 +38,7 @@ export default function Shippment({games}) {
 
 
     <div className={styles.right}>
-        <p>Resume</p>
+        <OrderSummary games={games} selectlocation={selectlocation}/>
     </div>
     
         
