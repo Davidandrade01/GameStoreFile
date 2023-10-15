@@ -1,0 +1,2 @@
+# GameStoreFile
+Full file
