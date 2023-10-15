@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { CardElement,useStripe,useElements, } from '@stripe/react-stripe-js'
 //Ui semantic
 import { Button } from 'semantic-ui-react'
-import { forEach, Map } from 'lodash'
+import { forEach, map } from 'lodash'
 
 //Styles
 
@@ -93,7 +93,7 @@ export default function OrderSummary({games,selectlocation}) {
         <div className={styles.block}>
 
           <div className={styles.products}>
-              {Map(games,(item)=>(
+              {map(games,(item)=>(
                 <div key={item.id} className={styles.product}>
                 
                 <div>
