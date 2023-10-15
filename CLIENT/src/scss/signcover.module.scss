@@ -1,0 +1,27 @@
+@import 'variables';
+
+.container{
+   
+   width: 100%;
+   
+
+    .topbar{
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        > a {
+            > i{
+                font-size: 26px;
+                color: $danger;
+                margin: 0;
+            }
+        }
+    }
+}       
+
+
+
+
