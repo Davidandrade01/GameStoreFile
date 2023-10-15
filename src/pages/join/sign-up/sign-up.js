@@ -6,6 +6,7 @@ import styles from '@/scss/signup.module.scss'
 //Components
 import Signcover from '@/components/Signcover'
 import Registerform from '@/components/Registerform'
+import { Seo } from '@/components/Seo'
 
 export default function signUpPage() {
   return (
@@ -13,7 +14,7 @@ export default function signUpPage() {
     
     <>
     
-    
+    <Seo title="Sing up"/>
     <Signcover/>
     <div className={styles.container}>
       <div className={styles.form_container}>
@@ -36,7 +37,7 @@ export default function signUpPage() {
         </div>
       </div>
     </div>
-     
+    
     </>
     
 

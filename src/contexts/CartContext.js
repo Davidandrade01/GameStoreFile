@@ -38,13 +38,17 @@ export function CartProvider({children}){
     cartCtrl.delItem(gameId)
     refreshTotalCart()
   }
+  const deleteAllCart=()=>{
+    cartCtrl.deleteAll()
+    refreshTotalCart()
+  }
 
   const data={
     cart,
     total,
     addTocart,
     deleteItemFromCart,
-    deleteAllCart:()=>{},
+    deleteAllCart,
     updateQty
   }
 

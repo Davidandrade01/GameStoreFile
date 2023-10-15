@@ -16,6 +16,8 @@ import styles from '@/scss/cartdetails.module.scss'
 
 import Resumen from './Resumen';
 
+import { Seo } from './Seo';
+
 
 
 export default function CartDetails({games}) {
@@ -44,6 +46,8 @@ export default function CartDetails({games}) {
     
   return (
     <>
+
+<Seo title={`Game Store - CartDetails`}/>
     <h2 style={{marginBottom:8}}>Basket</h2>
     <div className={styles.container}>
       

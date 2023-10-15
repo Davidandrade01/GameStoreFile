@@ -8,13 +8,14 @@ import styles from '@/scss/signup.module.scss'
 //Components
 import Signcover from '@/components/Signcover'
 import Loginform from '@/components/Loginform'
+import { Seo } from '@/components/Seo'
 
 export default function SignInPage() {
   return (
     <>
     
     
-    
+    <Seo title="Signin"/>
     <Signcover/>
     <div className={styles.container}>
       <div className={styles.form_container}>
@@ -37,7 +38,7 @@ export default function SignInPage() {
         </div>
       </div>
     </div>
-     
+   
     </>
   )
 }

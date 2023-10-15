@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useState,useEffect } from 'react'
 //Components
 import CartDetails from '@/components/CartDetails'
+import { Seo } from '@/components/Seo'
 
 //Hooks
 import { useCart } from '@/hooks/useCart'
@@ -41,7 +42,7 @@ export default function cart() {
   console.log (games)
   return (
     <>
-      
+    
 
       <CartLayout>
         {currentStep === 1 && <CartDetails games={games} /> }

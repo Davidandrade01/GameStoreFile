@@ -14,6 +14,7 @@ import { loadStripe } from '@stripe/stripe-js'
 
 //Contants
 import { ENV } from '@/utils'
+import { Seo } from './Seo'
 
 
 
@@ -22,7 +23,8 @@ export default function Shippment({games}) {
   const[selectlocation,SetSelectLocation]=useState(null)
   
   return (
-
+    <>
+    <Seo  title= ' Games Store - Shippment'/>
     <Elements stripe={stripeInit}>
     <div className={styles.container}>
     <div className={styles.center}>
@@ -46,5 +48,6 @@ export default function Shippment({games}) {
     
     </div>
     </Elements>
+    </>
   )
 }

@@ -16,7 +16,7 @@ export default function Account() {
     const {user}=useAuth()
     const {total}=useCart()
     const router = useRouter()
-
+    
     const goToLogin =()=> router.push('/join/sign-in')
     const goToAccount =()=> router.push('/accountPage')
     const goToCart=()=>{

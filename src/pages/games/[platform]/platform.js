@@ -5,6 +5,7 @@ import BasicLayout from '@/layouts/BasicLayout'
 import GridGames from '@/components/GridGames'
 import { Separator } from '@/components/separator'
 import PaginationBtn from '@/components/PaginationBtn'
+import { Seo } from '@/components/Seo'
 
 //semantic-ui-react
 import { Container } from 'semantic-ui-react'
@@ -23,6 +24,7 @@ export default function pagePlatform({game,platform,pagination}) {
   console.log(pagination)
   return (
     <>
+    <Seo title={`Game Store -  ${platform.attributes.title}`}/>
         <BasicLayout relative>
 
         <Container>

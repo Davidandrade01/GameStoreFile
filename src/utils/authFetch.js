@@ -28,9 +28,9 @@ export async function authFetch(url,params) {
             }
         }
     try {
-        return await fetch (url,paramsTemp)
+        return await fetch(url,paramsTemp)
     } catch (error) {
-        return
+      console.error(error)
     } 
    }
    }
